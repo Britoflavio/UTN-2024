@@ -1,0 +1,7 @@
+1. Pluviómetro
+Se ha solicitado un programa que permita cargar las precipitaciones promedio en cada mes del país, en base a esos datos armar un menú de opciones que permita:
+
+Determinar el promedio anual de lluvias
+Determinar el promedio de lluvias para un determinado trimestre
+Determinar el mes más seco del año
+Determinar los meses del año en los que llovió más que el promedios de lluvia de todo el año.
