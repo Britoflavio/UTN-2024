@@ -1,5 +1,3 @@
-                                        Ordenar y buscar
-
 Se pide un programa que cargue n elementos numéricos aleatorios entre 1 y 100 inclusive (pueden existir duplicados). A partir de ese arreglo:
 
 1-Ordenarlo de forma ascendente y mostrarlo

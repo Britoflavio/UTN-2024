@@ -2,7 +2,6 @@ def cargar_valores(v):
     n = len(v)
     for i in range(n):
         v[i] = int(input('Ingrese numeros: '))
-
     return v
 def ordenar(v):
     n = len(v)
