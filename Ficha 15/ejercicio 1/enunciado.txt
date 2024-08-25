@@ -4,4 +4,4 @@ Se ha solicitado un programa que permita cargar las precipitaciones promedio en 
 Determinar el promedio anual de lluvias
 Determinar el promedio de lluvias para un determinado trimestre
 Determinar el mes más seco del año
-Determinar los meses del año en los que llovió más que el promedios de lluvia de todo el año.
+Determinar los meses del año en los que llovió más que el promedios de lluvia del  anio entero.
