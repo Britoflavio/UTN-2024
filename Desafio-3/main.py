@@ -1,16 +1,23 @@
 import soporte
 
 v = soporte.vector_unknown_range(300000)
+entrada = [1, 5, 3, 3, 3, 2, 3, 4, 5]
 
+cont = []
+num = []
 
-hola = [1, 7, 3, 3, 5]
+def buscar_secuencial(v, x):
 
+    for i in range(len(v)):
+        if v[i] == x:
+            return i
+    return -1
 
-for i in range(len(hola)):
-    print(i)
-
-
-def search_indice(v, x):
-    cont = num = []
-    if i in range(len(v)):
-        pass
+for i in v:
+    nro = buscar_secuencial(num, i)
+    if nro == -1:
+        num.append(i)
+        cont.append(1)
+    else:
+        cont[nro] += 1
+print(len(num))
