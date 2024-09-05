@@ -106,7 +106,6 @@ def opcion4(vec):
 
 def opcion5(vec, x):
     n = len(vec)
-    print(x)
     for i in range(n):
         if vec[i].cp == x:
             if vec[i].pago == 1:
@@ -115,6 +114,7 @@ def opcion5(vec, x):
                 vec[i].pago = 1
             return vec[i]
     return -1
+
 
 def opcion6(vec, formato):
     n = len(vec)
@@ -155,7 +155,6 @@ def opcion7(vec, formato):
 
 # PUNTO 8
 def opcion8(vec):
-
     n = len(vec)
     porc = 0
     monto_total = 0
@@ -171,7 +170,6 @@ def opcion8(vec):
         porc = (mayor * 100) // monto_total
 
     return porc, tipo_may
-
 
 
 # PUNTO 9

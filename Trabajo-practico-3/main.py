@@ -1,7 +1,5 @@
 import funciones
 
-1
-
 
 def main():
     archivo = 'envios-tp3.txt'
@@ -20,7 +18,7 @@ def main():
         print("8. Envio con mayor importe")
         print("9. Importe final promedio")
         print("10. Salir")
-        op = int(input("Ingrese numero de opcion: "))
+        op = funciones.validar_rango(1, 10, "Ingrese numero de opcion: ")
 
         if op == 1:
             vec, formato = funciones.punto1(vec, formato, archivo)
