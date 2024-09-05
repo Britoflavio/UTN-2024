@@ -90,6 +90,6 @@ class Envio:
     def __str__(self):
         r = 'Codigo Postal: ' + str(self.cp)
         r += ' Direccion: ' + str(self.destino)
-        r += ' Tipo de envio:' + str(self.tipo)
-        r += ' Forma de pago:' + str(self.pago)
+        r += ' Tipo de envio: ' + str(self.tipo)
+        r += ' Forma de pago: ' + str(self.pago)
         return r

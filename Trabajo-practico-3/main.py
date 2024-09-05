@@ -1,11 +1,13 @@
 import funciones
+
 1
+
+
 def main():
     archivo = 'envios-tp3.txt'
     formato = 'HC'
     vec = []
-
-
+    cant_final = []
     op = 0
     while op != 10:
         print("1. Cargar arreglo desde archivo de texto")
@@ -22,6 +24,7 @@ def main():
 
         if op == 1:
             vec, formato = funciones.punto1(vec, formato, archivo)
+
         elif op == 2:
             funciones.opcion2(vec)
 
@@ -31,40 +34,58 @@ def main():
             else:
                 print("Todavia no hay datos cargados en el arreglo...")
                 print()
+
         elif op == 4:
             m = funciones.opcion4(vec)
+
             if m is None:
                 print('No existe registro.')
             else:
                 print('Registro encontrado: ', m)
+
         elif op == 5:
-            cp = funciones.opcion5(vec)
-            if cp is None:
-                print('No existe registro.')
+            x = input('Ingresar cp: ')
+            cp = funciones.opcion5(vec, x)
+            if cp == -1:
+                print('No existe registro del siguiente cp: ' + str(x))
             else:
                 print('Registro encontrado, valor de forma de pago cambiado con exito.')
                 print('Registro actualizado: ', cp)
 
         elif op == 6:
-            cant = funciones.opcion6(vec, formato)
-            print('Formato: ', formato)
-            print('Cantidad de envios por tipo(0, 1, 2 ,3 ,4 ,5 ,6): ', cant)
+            if len(vec) != 0:
+                cant = funciones.opcion6(vec, formato)
+                print('Formato: ', formato)
+                print('Cantidad de envios por tipo(0, 1, 2 ,3 ,4 ,5 ,6): ', cant)
+            else:
+                print("Todavia no hay datos cargados en el arreglo...")
+                print()
+
         elif op == 7:
-            cant_final = funciones.opcion7(vec, formato)
-            print('Formato: ', formato)
-            print('Cantidad de envios por tipo(0, 1, 2 ,3 ,4 ,5 ,6): ', cant_final)
+            if len(vec) != 0:
+                cant_final = funciones.opcion7(vec, formato)
+                print('Formato: ', formato)
+                print('Importe final acumulado por pagos ', cant_final)
+            else:
+                print("Todavia no hay datos cargados en el arreglo...")
+                print()
 
         elif op == 8:
-            nuev = funciones.opcion7(vec, formato)
-            porc, mont_may = funciones.opcion8(nuev)
-            print('Porcentaje que representa el monto mayor: ' + str(porc) + '%')
-            print('Tipo de envio con mayor importe:', mont_may) #ACA DEBE SALIR DE 0 AL 6, PERO NO SE ME OCURRE (SEGURO HAY QUE HACER ARRAY BIDIMENSIONAL)
-        elif op == 9:
-            prom = funciones.prom_total(vec)
-            print('El promedio total entre todos los envios del arreglo es de: ', prom)
-            envios_men = funciones.menor_promedio(vec, prom)
-            print('Hay un total de ', envios_men, ' envios que tuvieron un importe menor al promedio.')
+            if len(cant_final) != 0:
+                porc, tipo_may = funciones.opcion8(cant_final)
+                print('Porcentaje que representa el monto mayor: ' + str(porc) + '%')
+                print('Tipo de envio con mayor importe:', tipo_may)
+            else:
+                print('Para realizar este procedimiento primero debes seleccionar la opcion 7.')
 
+        elif op == 9:
+            if len(vec) != 0:
+                prom = funciones.prom_total(vec)
+                print('El promedio total entre todos los envios del arreglo es de: ', prom)
+                envios_men = funciones.menor_promedio(vec, prom)
+                print('Hay un total de ', envios_men, ' envios que tuvieron un importe menor al promedio.')
+            else:
+                print('No hay datos en el arreglo')
 
 
 if __name__ == '__main__':
