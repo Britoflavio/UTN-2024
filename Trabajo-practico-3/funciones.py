@@ -73,7 +73,12 @@ def opcion2(v):
 
     for i in range(m):
         cp = input("Codigo postal: ")
-        destino = input("Direccion envio: ")
+        destino = input("Dirección envio (colocar punto al final de la dirección): ")
+        letras_destino = len(destino)
+        while destino[letras_destino - 1] != ".":
+            destino = input("Dirección envio (Debe colocar el punto al final de la dirección para continuar): ")
+            letras_destino = len(destino)
+
         tipo = validar_rango(0, 6, "Tipo de envio (entre 0 y 6): ")
         pago = validar_rango(1, 2, "Forma de pago (entre 1 y 2): ")
         envio = clases.Envio(cp, destino, tipo, pago)
@@ -138,11 +143,13 @@ def opcion7(vec, formato):
     n = len(vec)
 
     vec_finales = 7 * [0]
-
     for i in range(n):
-        final = clases.Envio.final_amount(vec[i])
+
+        destino = clases.Envio.vali_direc(vec[i].destino)
+        pais = clases.Envio.cp(vec[i])
+        final = clases.Envio.final_amount(vec[i], pais)
+
         if formato == 'HC':
-            destino = clases.Envio.vali_direc(vec[i].destino)
             if destino is True:
                 num = vec[i].tipo
                 vec_finales[num] += final
@@ -166,6 +173,7 @@ def opcion8(vec):
         if mayor == vec[i]:
             tipo_may = i
         monto_total += vec[i]
+
     if mayor != 0:
         porc = (mayor * 100) // monto_total
 
@@ -178,7 +186,8 @@ def prom_total(vec):
     envios_total = len(vec)
 
     for i in range(envios_total):
-        importe_envio = clases.Envio.final_amount(vec[i])
+        pais = clases.Envio.cp(vec[i])
+        importe_envio = clases.Envio.final_amount(vec[i],pais )
         importe_final += importe_envio
     return importe_final // envios_total
 
@@ -187,7 +196,8 @@ def menor_promedio(vec, prom):
     cont_menor = 0
     envios = len(vec)
     for i in range(envios):
-        importe_envio = clases.Envio.final_amount(vec[i])
+        pais = clases.Envio.cp(vec[i])
+        importe_envio = clases.Envio.final_amount(vec[i], pais)
         if prom > importe_envio:
             cont_menor += 1
     return cont_menor

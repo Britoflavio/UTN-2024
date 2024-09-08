@@ -36,19 +36,18 @@ class Envio:
                 return 'Uruguay'
         return 'Otro'
 
-    def final_amount(self):
+    def final_amount(self, cp):
 
         importes = (1100, 1800, 2450, 8300, 10900, 14300, 17900)
         monto = importes[self.tipo]
-
-        if self.destino == 'Argentina':
+        if cp == 'Argentina':
             inicial = monto
         else:
-            if self.destino == 'Bolivia' or self.destino == 'Paraguay' or (self.destino == 'Uruguay' and self.cp[0] == '1'):
+            if cp == 'Bolivia' or cp == 'Paraguay' or (cp == 'Uruguay' and self.cp[0] == '1'):
                 inicial = int(monto * 1.20)
-            elif self.destino == 'Chile' or (self.destino == 'Uruguay' and self.cp[0] != '1'):
+            elif cp == 'Chile' or (cp == 'Uruguay' and self.cp[0] != '1'):
                 inicial = int(monto * 1.25)
-            elif self.destino == 'Brasil':
+            elif cp == 'Brasil':
                 if self.cp[0] == '8' or self.cp[0] == '9':
                     inicial = int(monto * 1.20)
                 else:

@@ -13,7 +13,7 @@ def main():
         print("3. Listado ordenado")
         print("4. Busqueda por direccion")
         print("5. Busqueda por codigo postal")
-        print("6. Cantidad de envios con direccion válida")
+        print("6. Cantidad de envios con direccion válida por tipo")
         print("7. Importe final acumulado")
         print("8. Envio con mayor importe")
         print("9. Importe final promedio")
@@ -35,7 +35,6 @@ def main():
 
         elif op == 4:
             m = funciones.opcion4(vec)
-
             if m is None:
                 print('No existe registro.')
             else:
@@ -54,20 +53,23 @@ def main():
             if len(vec) != 0:
                 cant = funciones.opcion6(vec, formato)
                 print('Formato: ', formato)
-                print('Cantidad de envios por tipo(0, 1, 2 ,3 ,4 ,5 ,6): ', cant)
+                for i in range(7):
+                    print("Direccion valida en el tipo " + str(i) + ":", cant[i])
+
             else:
                 print("Todavia no hay datos cargados en el arreglo...")
                 print()
+
 
         elif op == 7:
             if len(vec) != 0:
                 cant_final = funciones.opcion7(vec, formato)
                 print('Formato: ', formato)
-                print('Importe final acumulado por pagos ', cant_final)
+                for i in range(7):
+                    print("Importe acumulado tipo " + str(i) + ":" + "$", cant_final[i])
             else:
                 print("Todavia no hay datos cargados en el arreglo...")
                 print()
-
         elif op == 8:
             if len(cant_final) != 0:
                 porc, tipo_may = funciones.opcion8(cant_final)
