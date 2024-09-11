@@ -29,7 +29,7 @@ def punto_a():
         asiento = random.randint(1, 100)
         valor = random.randint(200, 20000)
         v[i] = Ticket(codigo, id, destino, asiento, valor)
-
+        print(v[i])
     return v
 
 
@@ -74,3 +74,11 @@ def destinos_array(v):
     return destinos
 
 
+def opcion_d(v):
+    x = validar_n(0, 'Ingrese numero de id a buscar: ')
+    for i in range(len(v)):
+        if x == v[i].id:
+            r = f'Numero de asiento: {v[i].asiento}'
+            r += f' Pais de destino: {v[i].destino}'
+            return r
+    return -1

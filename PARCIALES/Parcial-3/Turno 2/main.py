@@ -1,4 +1,4 @@
-import funciones
+from funciones import *
 
 
 def main():
@@ -10,21 +10,25 @@ def main():
         print('2.Mostrar los datos de todos los tickets cuyo número de asiento sea mayor al numero ingresado')
         print('3.Buscar importes mayores')
         print('4.')
-        op = funciones.validacion_rango(1, 5, 'Ingrese numero de opcion: ')
+        op = validacion_rango(1, 5, 'Ingrese numero de opcion: ')
 
         if op == 1:
-            v = funciones.punto_a()
+            v = punto_a()
             print()
         elif op == 2:
             if len(v) != 0:
-                funciones.punto_b(v)
+                punto_b(v)
                 print()
             else:
                 print('No hay registro de tickets.')
         elif op == 3:
-            funciones.punto_c(v)
+            punto_c(v)
         elif op == 4:
-            pass
+            op4 = opcion_d(v)
+            if op4 != -1:
+                print(op4)
+            else:
+                print('No existe. ')
 
 
 if __name__ == '__main__':
