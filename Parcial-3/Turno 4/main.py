@@ -9,7 +9,7 @@ def main():
         print('1.Cargar juicios')
         print('2.Mostrar datos de juicios especificos')
         print('3.Mostrar cantidad de juicios')
-        print('4.')
+        print('4.Modificar monto de un expediente')
         print('5. Finalizar programa.')
         op = validar_intervalo(1, 5, 'Ingrese un opcion del programa: ')
 
@@ -29,7 +29,12 @@ def main():
                 if x < tipos[i]:
                     print("Direccion valida en el tipo " + str(i) + ":", tipos[i])
         elif op == 4:
-            pass
+            modificado = opcion_d(v)
+            if modificado != -1:
+                print('Juicio modificado exitosamente')
+                print(modificado)
+            else:
+                print('No hay registros del expediente.')
 
 
 if __name__ == '__main__':

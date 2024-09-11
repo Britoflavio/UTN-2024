@@ -19,7 +19,6 @@ def validar_may(men, msj):
 
 
 def opcion_a():
-
     cargas = validar_may(0, 'Ingrese cantidad de juicios: ')
     v = cargas * [0]
     descripcion = ['Robo armado', 'Robo bancario', 'Hacker', 'Asesinato']
@@ -32,6 +31,7 @@ def opcion_a():
         cliente = random.choice(client)
         monto = random.randint(1000, 10000)
         v[i] = Juico(expe, descrip, tipo, cliente, monto)
+        print(v[i])
     print('Carga finalizada.')
     return v
 
@@ -60,3 +60,14 @@ def opcion_c(v):
     for i in range(n):
         cant_juicios[v[i].tipo - 1] += 1
     return cant_juicios
+
+
+def opcion_d(v):
+    cod = validar_may(0, 'Ingrese codigo de expediente: ')
+    for i in range(len(v)):
+        if cod == v[i].expediente:
+            print('Juicio encontrado')
+            nuevo_monto = validar_may(0, 'Ingresar nuevo monto de honorarios: ')
+            v[i].monto = nuevo_monto
+            return v[i]
+    return -1
