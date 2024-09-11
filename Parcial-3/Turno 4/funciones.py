@@ -52,3 +52,11 @@ def opcion_b(v, mon):
             ordenar_descrip(v)
             print(v[i])
     return cont
+
+
+def opcion_c(v):
+    cant_juicios = 15 * [0]
+    n = len(v)
+    for i in range(n):
+        cant_juicios[v[i].tipo - 1] += 1
+    return cant_juicios

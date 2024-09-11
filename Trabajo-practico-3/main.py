@@ -59,8 +59,6 @@ def main():
             else:
                 print("Todavia no hay datos cargados en el arreglo...")
                 print()
-
-
         elif op == 7:
             if len(vec) != 0:
                 cant_final = funciones.opcion7(vec, formato)
