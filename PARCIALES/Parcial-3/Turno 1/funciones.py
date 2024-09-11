@@ -1,5 +1,7 @@
 import random
 from clase import Empleo
+
+
 def validar_intervalor(men, may, msj):
     val = int(input(msj))
     while may < val or val < men:
@@ -21,13 +23,14 @@ def opcion_a():
     v = n * [0]
     descripcion = ['computacional', 'home office', 'medio turno', 'turno completo', 'semanal']
     for i in range(len(v)):
-        #id, descripcion, tipo, retribucion
+        # id, descripcion, tipo, retribucion
         id = random.randint(1, 30)
         descrip = random.choice(descripcion)
-        tipo = random.randint(0,39)
-        retri = random.randint(10000,20000)
+        tipo = random.randint(0, 39)
+        retri = random.randint(10000, 20000)
         v[i] = Empleo(id, descrip, tipo, retri)
     return v
+
 
 def ordenar_desc(v):
     n = len(v)
@@ -36,6 +39,7 @@ def ordenar_desc(v):
             if v[i].descripcion > v[j].descripcion:
                 v[i], v[j] = v[j], v[i]
 
+
 def opcion_b(v):
     ordenar_desc(v)
     acum_sueldo = 0
@@ -43,4 +47,11 @@ def opcion_b(v):
         print(v[i])
         acum_sueldo += v[i].retribucion
     return acum_sueldo
+
+def opcion_c(v):
+    n = len(v)
+    cant_empleos = 40 * [0]
+    for i in range(n):
+        cant_empleos[v[i].tipo - 1] += 1
+    return cant_empleos
 
