@@ -187,7 +187,7 @@ def prom_total(vec):
 
     for i in range(envios_total):
         pais = clases.Envio.cp(vec[i])
-        importe_envio = clases.Envio.final_amount(vec[i],pais )
+        importe_envio = clases.Envio.final_amount(vec[i], pais)
         importe_final += importe_envio
     return importe_final // envios_total
 
