@@ -8,8 +8,8 @@ class Juico:
 
     def __str__(self):
         r = 'Codigo de expediente: ' + str(self.expediente)
-        r += ' Descripcion del juicio: ' + self.descripcion
-        r += ' Tipo de juicio: ' + str(self.tipo)
-        r += ' Nombre del cliente: ' + self.cliente
-        r += ' Monto  a cobrar: ' + str(self.monto)
+        r += ' |Descripcion del juicio: ' + self.descripcion
+        r += ' |Tipo de juicio: ' + str(self.tipo)
+        r += ' |Nombre del cliente: ' + self.cliente
+        r += ' |Monto  a cobrar: ' + str(self.monto)
         return r

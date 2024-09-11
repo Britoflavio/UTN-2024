@@ -20,7 +20,7 @@ def validar_may(men, msj):
 
 def opcion_a():
 
-    cargas = validar_may(1, 'Ingrese un valor: ')
+    cargas = validar_may(0, 'Ingrese cantidad de juicios: ')
     v = cargas * [0]
     descripcion = ['Robo armado', 'Robo bancario', 'Hacker', 'Asesinato']
     client = ['Jorge', 'Carlos', 'Martin', 'Soledad', 'Sofia', 'Jorgelina', 'Trinidad', 'Agustina']
@@ -32,6 +32,7 @@ def opcion_a():
         cliente = random.choice(client)
         monto = random.randint(1000, 10000)
         v[i] = Juico(expe, descrip, tipo, cliente, monto)
+    print('Carga finalizada.')
     return v
 
 
@@ -45,7 +46,7 @@ def ordenar_descrip(v):
 
 def opcion_b(v, mon):
     cont = 0
-    for i in range(v):
+    for i in range(len(v)):
         if v[i].monto > mon:
             cont += 1
             ordenar_descrip(v)

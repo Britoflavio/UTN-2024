@@ -6,12 +6,12 @@ def main():
     v = []
 
     while op != 5:
-        print('1.')
+        print('1.Cargar juicios')
         print('2.')
         print('3.')
         print('4.')
         print('5. Finalizar programa.')
-        op = validar_intervalo(1, 5, 'Ingrese un valor: ')
+        op = validar_intervalo(1, 5, 'Ingrese un opcion del programa: ')
 
         if op == 1:
             v = opcion_a()
