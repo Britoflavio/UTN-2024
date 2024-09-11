@@ -29,6 +29,7 @@ def opcion_a():
         tipo = random.randint(0, 39)
         retri = random.randint(10000, 20000)
         v[i] = Empleo(id, descrip, tipo, retri)
+        print(v[i])
     return v
 
 
@@ -48,6 +49,7 @@ def opcion_b(v):
         acum_sueldo += v[i].retribucion
     return acum_sueldo
 
+
 def opcion_c(v):
     n = len(v)
     cant_empleos = 40 * [0]
@@ -55,3 +57,12 @@ def opcion_c(v):
         cant_empleos[v[i].tipo - 1] += 1
     return cant_empleos
 
+
+def opcion_d(v):
+    num = validar_may(0, 'Ingrese un identificador a buscar: ')
+    for i in range(len(v)):
+        if v[i].id == num:
+            r = f'Descripcion: {v[i].descripcion}'
+            r += f' Sueldo a pagar: {v[i].retribucion}'
+            return r
+    return -1

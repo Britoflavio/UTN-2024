@@ -31,8 +31,14 @@ def main():
                 print('No existen empleos registrados.')
 
         elif op == 4:
-            pass
-
+            if len(v) != 0:
+                rest = opcion_d(v)
+                if rest != -1:
+                    print(rest)
+                else:
+                    print('No se encontro identificador.')
+            else:
+                print('No hay registros de empleos')
 
 
 if __name__ == '__main__':
