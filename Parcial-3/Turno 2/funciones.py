@@ -57,14 +57,13 @@ def punto_b(v):
 
 def punto_c(v):
     m = validar_n(0, 'Ingrese un valor: ')
-
     may = []
     d = destinos_array(v)
-
     for i in range(len(d)):
         if d[i] > m:
             may.append(d[i])
     print(may)
+
 
 def destinos_array(v):
     n = len(v)
@@ -73,3 +72,5 @@ def destinos_array(v):
         num = v[i].destino
         destinos[num] += v[i].valor
     return destinos
+
+
