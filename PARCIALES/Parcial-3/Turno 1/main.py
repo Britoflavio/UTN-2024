@@ -33,7 +33,7 @@ def main():
         elif op == 4:
             if len(v) != 0:
                 rest = opcion_d(v)
-                if rest != -1:
+                if rest is not None:
                     print(rest)
                 else:
                     print('No se encontro identificador.')

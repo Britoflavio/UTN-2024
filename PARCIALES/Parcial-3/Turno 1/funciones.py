@@ -45,7 +45,6 @@ def opcion_b(v):
     ordenar_desc(v)
     acum_sueldo = 0
     for i in range(len(v)):
-        print(v[i])
         acum_sueldo += v[i].retribucion
     return acum_sueldo
 
@@ -65,4 +64,4 @@ def opcion_d(v):
             r = f'Descripcion: {v[i].descripcion}'
             r += f' Sueldo a pagar: {v[i].retribucion}'
             return r
-    return -1
+    return None
