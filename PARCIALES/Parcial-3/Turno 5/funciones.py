@@ -36,5 +36,5 @@ def opcion_a():
 def opcion_c(v):
     cant_tipos = 30 * [0]
     for i in range(len(v)):
-        cant_tipos[v[i].tipo] += 1
+        cant_tipos[v[i].tipo - 1] += 1
     return cant_tipos
