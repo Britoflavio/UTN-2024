@@ -54,3 +54,9 @@ def opcion_b(v):
             print(v[i])
     print('Ningun servicio cumple con esta condicion.')
 
+
+def opcion_c(v):
+    cont_tipos = 10 * [0]
+    for i in range(len(v)):
+        cont_tipos[v[i].tipo - 1] += 1
+    return cont_tipos

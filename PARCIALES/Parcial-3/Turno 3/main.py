@@ -22,7 +22,13 @@ def main():
                 print('Primero debe cargar como minimo un servicio')
                 print()
         elif op == 3:
-            pass
+            if len(v) != 0:
+                acum = opcion_c(v)
+                for i in range(len(acum)):
+                    if acum[i] > 0:
+                        print(f'Cantidad de serivicios de tipo {i + 1}: {acum[i]}')
+            else:
+                print('No hay registros de serivios, cargue al menos uno.')
         elif op == 4:
             pass
 
