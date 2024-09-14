@@ -30,7 +30,10 @@ def main():
             else:
                 print('No hay registros de serivios, cargue al menos uno.')
         elif op == 4:
-            pass
+            if len(v) != 0:
+                opcion_d(v)
+            else:
+                print('No hay registros de servicios, cargue servicios antes de continuar.')
 
 
 if __name__ == '__main__':

@@ -60,3 +60,14 @@ def opcion_c(v):
     for i in range(len(v)):
         cont_tipos[v[i].tipo - 1] += 1
     return cont_tipos
+
+
+def opcion_d(v):
+    nom = input('Ingrese nombre del cliente: ')
+    for i in range(len(v)):
+        if nom.capitalize() == v[i].nombre:
+            v[i].importe += 2000
+            return print(v[i])
+
+    print(f'No se encontro al cliente {nom.capitalize()}.')
+
