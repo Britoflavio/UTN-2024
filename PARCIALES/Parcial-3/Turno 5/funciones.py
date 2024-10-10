@@ -24,14 +24,15 @@ def opcion_a():
     codigos = ['CASDAS', 'ASD12CASD', 'XCACSAASDASD', 'ZASDDASD']
     titulo = ['CASDAS123123', 'asdas', 'asdas', 'asdas']
     for i in range(len(v)):
-        #cod, tit, pub, costo
+        # cod, tit, pub, costo
         cod = random.choice(codigos)
         tit = random.choice(titulo)
-        pub = random.randint(1,30)
-        costo = random.randint(1000,2000)
-        v[i] = Publicaciones(cod,tit,pub,costo)
+        pub = random.randint(1, 30)
+        costo = random.randint(1000, 2000)
+        v[i] = Publicaciones(cod, tit, pub, costo)
         print(v[i])
     return v
+
 
 def opcion_c(v):
     cant_tipos = 30 * [0]
