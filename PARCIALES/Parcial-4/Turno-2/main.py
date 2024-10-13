@@ -2,6 +2,7 @@ from funciones import *
 def main():
     v = []
     op = 0
+    ARCHIVO_BIN = 'libros.dat'
     while op != 6:
         print('1.')
         print('2.')
@@ -20,7 +21,6 @@ def main():
                 print()
         elif op == 3:
             if v:
-
                 n = val_minimo(1000000000000, 'Ingrese ISBN: ')
                 pos = bsucar_isbn(v, n)
                 if pos != -1:
@@ -30,7 +30,12 @@ def main():
             else:
                 print('No hay registros cargados.')
         elif op == 4:
-            pass
+            if v:
+                a = input('Nombre del autor: ')
+                p = int(input('Precio maximo deseado: '))
+                opcion_d(v, ARCHIVO_BIN, a, p)
+            else:
+                print('No existen registros.')
         elif op == 5:
             pass
 if __name__ == '__main__':

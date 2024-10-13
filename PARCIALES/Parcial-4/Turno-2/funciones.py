@@ -1,5 +1,8 @@
 from clase import Libro
 import random
+import pickle
+import os.path
+
 def val_interval(men,may,msj):
     val = int(input(msj))
     while men > val or val > may:
@@ -18,12 +21,12 @@ def opcion_a(v):
     v = []
     n = val_minimo(0, 'Ingrese cantidad de libros: ')
     titulos = ['ASDFD', 'SDFSDF', 'SDFER', 'GSDG', 'SDFDFR', 'DSFGDS']
-    autor = ['fla', 'sole', 'carlo', 'carla', 'pedrin']
+    autores = ['fla', 'sole', 'carlo', 'carla', 'pedrin']
 
     for i in range(n):
         isbn = random.randint(1000000000000,9999999999999)
         titulo = random.choice(titulos)
-        autor = random.choice(autor)
+        autor = random.choice(autores)
         idioma = random.randint(1,5)
         precio = random.randint(10000,200000)
         libro = Libro(isbn, titulo, autor, idioma, precio)
@@ -82,3 +85,11 @@ def opcion_c(v,pos):
         print('Precio con 22% descuento')
         print(v[pos])
         print()
+
+def opcion_d(v, arch_bin, a , p):
+    m = open(arch_bin, 'wb')
+    for i in range(len(v)):
+        if v[i].autor == a:
+            if p < v[i].precio:
+                pickle.dump(v[i],m)
+    m.close()
