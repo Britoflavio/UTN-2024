@@ -52,3 +52,24 @@ def opcion_b(v):
         n = v[i].orientacion
         v[i].orientacion = ubic[n - 1]
         print(v[i])
+
+def opcion_c(v):
+    fc = [[0] * 4 for f in range(35)]
+    for i in range(len(v)):
+        f = v[i].manzana - 1
+        c = v[i].orientacion - 1
+        fc[f][c] += v[i].terreno
+
+    for f in range(35):
+        for c in range(4):
+            if fc[f][c] != 0:
+                print(f'Manzana: {f+1} -Orientacion: {c+1}, -Superficie: {round(fc[f][c], 2)}')
+
+    print()
+    manz = int(input('Ingrese manzana para mostrar superficie vendida: '))
+    total = 0
+    f = manz - 1
+    for c in range(4):
+        total += fc[f][c]
+    print(f'La superficie para la manzana {manz}: {total}')
+    print()

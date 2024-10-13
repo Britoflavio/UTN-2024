@@ -15,9 +15,17 @@ def main():
         if op == 1:
             v = opcion_a()
         elif op == 2:
-            opcion_b(v)
+            if v:
+                opcion_b(v)
+            else:
+                print('No hay registros.')
+                print()
         elif op == 3:
-            pass
+            if v:
+                opcion_c(v)
+            else:
+                print('No hay registros.')
+                print()
         elif op == 4:
             pass
         elif op == 5:
