@@ -19,7 +19,16 @@ def main():
                 print('No hay registros.')
                 print()
         elif op == 3:
-            pass
+            if v:
+
+                n = val_minimo(1000000000000, 'Ingrese ISBN: ')
+                pos = bsucar_isbn(v, n)
+                if pos != -1:
+                    opcion_c(v,pos)
+                else:
+                    print(f'No encontramos el libro {n}')
+            else:
+                print('No hay registros cargados.')
         elif op == 4:
             pass
         elif op == 5:

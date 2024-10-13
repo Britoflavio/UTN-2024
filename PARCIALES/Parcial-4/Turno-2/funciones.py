@@ -56,3 +56,29 @@ def opcion_b(v):
         n = v[i].idioma
         v[i].idioma = idiomas[n - 1]
         print(v[i])
+    print()
+
+def bsucar_isbn(v, n):
+
+    m = len(v)
+    izq, der = 0, m - 1
+    while izq <= der:
+        prom = (izq + der) // 2
+        if n == v[prom].isbn:
+            return prom
+        else:
+            if n < v[prom].isbn:
+                der = prom - 1
+            else:
+                izq = prom + 1
+
+    return -1
+
+def opcion_c(v,pos):
+    print(v[pos])
+    print()
+    if v[pos].idioma == 'frances':
+        v[pos].precio = round(v[pos].precio * 0.78, 2)
+        print('Precio con 22% descuento')
+        print(v[pos])
+        print()
