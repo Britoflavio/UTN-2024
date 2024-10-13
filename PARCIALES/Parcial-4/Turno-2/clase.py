@@ -13,4 +13,3 @@ class Libro:
         r += f' -Idioma: {self.idioma}'
         r += f' -Precio: {self.precio}'
         return r
-print('holasss')
