@@ -4,6 +4,7 @@ from funciones import *
 def main():
     op = 0
     v = []
+    ARCHIVO_BIN = 'lotes.dat'
     while op != 6:
         print('1. Cargar lotes')
         print('2. Mostrar lotes')
@@ -27,9 +28,12 @@ def main():
                 print('No hay registros.')
                 print()
         elif op == 4:
-            pass
+            if v:
+                opcion_d(ARCHIVO_BIN, v)
+            else:
+                print('No hay registros para cargar.')
         elif op == 5:
-            pass
+            opcion_e(ARCHIVO_BIN)
 
 
 if __name__ == '__main__':

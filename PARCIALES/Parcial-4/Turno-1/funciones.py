@@ -1,7 +1,7 @@
 import random
 from clase import Lote
-
-
+import os.path
+import pickle
 def validar_mayor(men, msj):
     val = int(input(msj))
     while men > val:
@@ -73,3 +73,34 @@ def opcion_c(v):
         total += fc[f][c]
     print(f'La superficie para la manzana {manz}: {total}')
     print()
+
+def opcion_d(arch_bin, v):
+    l1 = int(input('Primer valor: '))
+    l2 = int(input('Segundo valor: '))
+    m = open(arch_bin, 'wb')
+    for i in range(len(v)):
+        if l1 <= v[i].lote <= l2:
+            pickle.dump(v[i], m)
+    m.close()
+    print('Archivo generado.')
+    print()
+
+def opcion_e(arch_bin):
+    if not os.path.exists(arch_bin):
+        print('El archivo no existe.')
+        print()
+        return
+    valor_total = cant_lotes = 0
+    m = open(arch_bin, 'rb')
+    size = os.path.getsize(arch_bin)
+    while m.tell() < size:
+        lines = pickle.load(m)
+        cant_lotes += 1
+        valor_total += lines.valor
+        print(lines)
+    m.close()
+    prom = 0
+    if cant_lotes != 0:
+        prom = valor_total / cant_lotes
+    print(f'Valor promedio de ventas entre los lotes del archivo: {round(prom, 2)}')
+
