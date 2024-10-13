@@ -13,11 +13,7 @@ def main():
         if op == 1:
             v = opcion_a(v)
         elif op == 2:
-            if v:
-                opcion_b(v)
-            else:
-                print('No existe registro.')
-                print()
+            pass
         elif op == 3:
             pass
         elif op == 4:
