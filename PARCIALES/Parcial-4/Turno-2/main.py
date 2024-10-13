@@ -10,6 +10,15 @@ def main():
         print('5. ')
         print('6. Salir')
         op = val_interval(1,6, 'Ingrese opcion: ')
-
+        if op == 1:
+            v = opcion_a(v)
+        elif op == 2:
+            pass
+        elif op == 3:
+            pass
+        elif op == 4:
+            pass
+        elif op == 5:
+            pass
 if __name__ == '__main__':
     main()
