@@ -37,6 +37,6 @@ def main():
             else:
                 print('No existen registros.')
         elif op == 5:
-            pass
+            opcion_e(ARCHIVO_BIN)
 if __name__ == '__main__':
     main()

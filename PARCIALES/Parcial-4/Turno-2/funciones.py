@@ -90,6 +90,23 @@ def opcion_d(v, arch_bin, a , p):
     m = open(arch_bin, 'wb')
     for i in range(len(v)):
         if v[i].autor == a:
-            if p < v[i].precio:
+            if p > v[i].precio:
                 pickle.dump(v[i],m)
+    m.close()
+
+def opcion_e(arch_bin):
+    if not os.path.exists(arch_bin):
+        print(f'No existe el archivo {arch_bin}.')
+        print()
+        return
+
+    size = os.path.getsize(arch_bin)
+    m = open(arch_bin, 'rb')
+    cant_lib = 0
+    while m.tell() < size:
+        cant_lib += 1
+        libs = pickle.load(m)
+        print(libs)
+    print(f'Hay {cant_lib} libros en el archivo')
+    print()
     m.close()
