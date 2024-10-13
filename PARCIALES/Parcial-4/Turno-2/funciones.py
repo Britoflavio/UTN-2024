@@ -49,3 +49,10 @@ def ordenar_op_a(v, libro):
     if izq > der:
         x = izq
     v[x:x] = [libro]
+
+def opcion_b(v):
+    idiomas = ['esp', 'ingles', 'port', 'frances', 'italiano']
+    for i in range(len(v)):
+        n = v[i].idioma
+        v[i].idioma = idiomas[n - 1]
+        print(v[i])
