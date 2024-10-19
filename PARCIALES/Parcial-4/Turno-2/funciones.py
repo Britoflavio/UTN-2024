@@ -3,12 +3,14 @@ import random
 import pickle
 import os.path
 
-def val_interval(men,may,msj):
+
+def val_interval(men, may, msj):
     val = int(input(msj))
     while men > val or val > may:
-        print(f'Valor invalido, intentar entre {men } y {may }')
+        print(f'Valor invalido, intentar entre {men} y {may}')
         val = int(input(msj))
     return val
+
 
 def val_minimo(men, msj):
     val = int(input(msj))
@@ -17,6 +19,7 @@ def val_minimo(men, msj):
         val = int(input(msj))
     return val
 
+
 def opcion_a(v):
     v = []
     n = val_minimo(0, 'Ingrese cantidad de libros: ')
@@ -24,16 +27,18 @@ def opcion_a(v):
     autores = ['fla', 'sole', 'carlo', 'carla', 'pedrin']
 
     for i in range(n):
-        isbn = random.randint(1000000000000,9999999999999)
+        isbn = random.randint(1000000000000, 9999999999999)
         titulo = random.choice(titulos)
         autor = random.choice(autores)
-        idioma = random.randint(1,5)
-        precio = random.randint(10000,200000)
+        idioma = random.randint(1, 5)
+        precio = random.randint(10000, 200000)
         libro = Libro(isbn, titulo, autor, idioma, precio)
-        ordenar_op_a(v,libro)
+        ordenar_op_a(v, libro)
     print('Arreglo cargado.')
     print()
     return v
+
+
 def ordenar_op_a(v, libro):
     n = len(v)
     x = n
@@ -53,6 +58,7 @@ def ordenar_op_a(v, libro):
         x = izq
     v[x:x] = [libro]
 
+
 def opcion_b(v):
     idiomas = ['esp', 'ingles', 'port', 'frances', 'italiano']
     for i in range(len(v)):
@@ -61,8 +67,8 @@ def opcion_b(v):
         print(v[i])
     print()
 
-def bsucar_isbn(v, n):
 
+def bsucar_isbn(v, n):
     m = len(v)
     izq, der = 0, m - 1
     while izq <= der:
@@ -77,7 +83,8 @@ def bsucar_isbn(v, n):
 
     return -1
 
-def opcion_c(v,pos):
+
+def opcion_c(v, pos):
     print(v[pos])
     print()
     if v[pos].idioma == 'frances':
@@ -86,13 +93,15 @@ def opcion_c(v,pos):
         print(v[pos])
         print()
 
-def opcion_d(v, arch_bin, a , p):
+
+def opcion_d(v, arch_bin, a, p):
     m = open(arch_bin, 'wb')
     for i in range(len(v)):
         if v[i].autor == a:
             if p > v[i].precio:
-                pickle.dump(v[i],m)
+                pickle.dump(v[i], m)
     m.close()
+
 
 def opcion_e(arch_bin):
     if not os.path.exists(arch_bin):
