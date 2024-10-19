@@ -68,6 +68,10 @@ def opcion_b(v):
     print()
 
 
+#if  n == v[i].isbn:
+#    return print(v[i])
+#else:
+#    noexiste
 def bsucar_isbn(v, n):
     m = len(v)
     izq, der = 0, m - 1
@@ -80,7 +84,6 @@ def bsucar_isbn(v, n):
                 der = prom - 1
             else:
                 izq = prom + 1
-
     return -1
 
 
